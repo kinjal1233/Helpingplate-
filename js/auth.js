@@ -1,0 +1,2 @@
+/* Password visibility toggle. Form submissions are handled by PHP. */
+document.addEventListener('DOMContentLoaded',()=>{const toggle=document.getElementById('passwordToggle');const input=document.getElementById('loginPassword');if(toggle&&input)toggle.addEventListener('click',()=>{const show=input.type==='password';input.type=show?'text':'password';toggle.innerHTML=show?'<i class="fa-regular fa-eye-slash"></i>':'<i class="fa-regular fa-eye"></i>';toggle.setAttribute('aria-label',show?'Hide password':'Show password');});});

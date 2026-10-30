@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{const toggle=document.querySelector('[data-sidebar-toggle]');const side=document.querySelector('.portal-sidebar');if(toggle&&side)toggle.addEventListener('click',()=>side.classList.toggle('open'));});

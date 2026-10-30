@@ -1,0 +1,5 @@
+Options -Indexes
+RewriteEngine On
+# Preserve old bookmarks while making PHP routes canonical.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)\.html$ $1.php [L,QSA]

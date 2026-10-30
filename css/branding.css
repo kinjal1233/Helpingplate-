@@ -1,0 +1,750 @@
+/* =========================================================
+   HELPINGPLATE BRAND LOCKUP
+   One logo image, one wordmark treatment across every page.
+   The image remains the original file: images/logo.png
+========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+:root {
+    --hp-brand-helping: #551a99;
+    --hp-brand-plate: #174d3a;
+}
+
+/* Public-site and authentication headers */
+.hp-nav-container {
+    min-height: 112px;
+}
+
+.hp-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    flex: 0 0 auto;
+    text-decoration: none;
+}
+
+.hp-logo img {
+    width: 98px;
+    height: 98px;
+    flex: 0 0 98px;
+    display: block;
+    object-fit: contain;
+}
+
+.hp-logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    line-height: 1;
+    min-width: 0;
+}
+
+.hp-logo-text > span {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--hp-brand-helping);
+    font-family: "DM Sans", sans-serif;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 1.08;
+    white-space: nowrap;
+}
+
+.hp-logo-text > span > span {
+    display: block;
+    color: var(--hp-brand-plate);
+    font-size: 41px;
+    font-weight: 700;
+    line-height: .98;
+}
+
+/* The tagline is already printed inside the supplied original logo image. */
+.hp-logo-text small {
+    display: none !important;
+}
+
+/* Keep every public footer consistent: use the original complete logo artwork.
+   Some older pages wrapped the image in a header-style wordmark; hide that
+   duplicate text so the footer does not show a second, differently styled logo. */
+.hp-footer-brand .hp-logo {
+    display: inline-block;
+    gap: 0;
+    margin: 0;
+    vertical-align: top;
+}
+
+.hp-footer-brand .hp-logo-text {
+    display: none !important;
+}
+
+.hp-footer-brand img {
+    width: 75px;
+    height: 75px;
+    display: block;
+    object-fit: contain;
+    background: #fffdf8;
+    border-radius: 10px;
+    margin: 0 0 16px;
+}
+
+/* Donor, requester, volunteer and admin portal header uses the same lockup. */
+.portal-topbar {
+    min-height: 112px;
+    height: 112px;
+}
+
+.portal-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    color: var(--hp-brand-plate);
+    text-decoration: none;
+}
+
+.portal-brand img {
+    width: 98px;
+    height: 98px;
+    flex: 0 0 98px;
+    object-fit: contain;
+}
+
+.portal-brand > span {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.portal-brand b {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--hp-brand-helping);
+    font-family: "DM Sans", sans-serif;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 1.08;
+}
+
+.portal-brand b span {
+    display: block;
+    color: var(--hp-brand-plate);
+    font-size: 41px;
+    font-weight: 700;
+    line-height: .98;
+}
+
+.portal-brand small {
+    display: none !important;
+}
+
+.portal-layout {
+    min-height: calc(100vh - 112px);
+}
+
+/* Smaller screens retain the same stacked name and brand colours. */
+@media (max-width: 980px) {
+    .hp-nav-container {
+        min-height: 104px;
+    }
+
+    .hp-logo img,
+    .portal-brand img {
+        width: 88px;
+        height: 88px;
+        flex-basis: 88px;
+    }
+
+    .hp-logo-text > span,
+    .portal-brand b {
+        font-size: 24px;
+    }
+
+    .hp-logo-text > span > span,
+    .portal-brand b span {
+        font-size: 37px;
+    }
+
+    .portal-topbar {
+        min-height: 104px;
+        height: 104px;
+    }
+
+    .portal-layout {
+        min-height: calc(100vh - 104px);
+    }
+}
+
+@media (max-width: 760px) {
+    .hp-nav-container {
+        min-height: 96px;
+        gap: 12px;
+    }
+
+    .hp-logo {
+        gap: 12px;
+    }
+
+    .hp-logo img,
+    .portal-brand img {
+        width: 78px;
+        height: 78px;
+        flex-basis: 78px;
+    }
+
+    .hp-logo-text > span,
+    .portal-brand b {
+        font-size: 21px;
+    }
+
+    .hp-logo-text > span > span,
+    .portal-brand b span {
+        font-size: 33px;
+    }
+
+    .portal-topbar {
+        min-height: 96px;
+        height: 96px;
+        padding: 0 4%;
+    }
+
+    .portal-brand {
+        gap: 12px;
+    }
+
+    .portal-layout {
+        min-height: calc(100vh - 96px);
+    }
+}
+
+@media (max-width: 420px) {
+    .hp-logo {
+        gap: 8px;
+    }
+
+    .hp-logo img,
+    .portal-brand img {
+        width: 66px;
+        height: 66px;
+        flex-basis: 66px;
+    }
+
+    .hp-logo-text > span,
+    .portal-brand b {
+        font-size: 18px;
+    }
+
+    .hp-logo-text > span > span,
+    .portal-brand b span {
+        font-size: 29px;
+    }
+}
+
+/* ==========================================
+   HELPINGPLATE - COMPACT GLOBAL NAVBAR
+   Applies to public pages and all portals
+========================================== */
+
+:root {
+    --hp-brand-green: #174D3A;
+    --hp-brand-orange: #EF7130;
+    --hp-brand-cream: #FAF6EE;
+}
+
+/* PUBLIC NAVBAR */
+.hp-navbar {
+    width: 100%;
+    min-height: 84px;
+    background: var(--hp-brand-cream);
+    border-bottom: 1px solid #e8e5dc;
+    position: relative;
+    z-index: 1000;
+}
+
+/* Navbar inner layout */
+.hp-navbar .hp-nav-container {
+    width: 100%;
+    max-width: 100%;
+    min-height: 84px;
+    padding: 5px 32px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Original complete logo - LEFT SIDE */
+.hp-navbar .hp-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    margin-right: auto;
+    text-decoration: none;
+}
+
+/* Original logo already contains the emblem,
+   HelpingPlate name and tagline */
+.hp-navbar .hp-logo img {
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Prevent duplicate brand name beside the logo */
+.hp-navbar .hp-logo-text {
+    display: none !important;
+}
+
+/* Navigation links - RIGHT SIDE */
+.hp-navbar .hp-nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 22px;
+    margin-left: auto;
+}
+
+.hp-navbar .hp-nav-links a {
+    color: var(--hp-brand-green);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: 0.2s ease;
+}
+
+.hp-navbar .hp-nav-links a:hover,
+.hp-navbar .hp-nav-links a.active {
+    color: var(--hp-brand-orange);
+}
+
+/* Get Started button */
+.hp-navbar .hp-nav-links .hp-nav-btn {
+    padding: 10px 19px;
+    border-radius: 25px;
+    background: var(--hp-brand-green);
+    color: white;
+}
+
+.hp-navbar .hp-nav-links .hp-nav-btn:hover {
+    background: var(--hp-brand-orange);
+    color: white;
+}
+
+/* Mobile menu button */
+.hp-navbar .hp-menu-btn {
+    display: none;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 9px;
+    background: #e9f2e9;
+    color: var(--hp-brand-green);
+    font-size: 19px;
+    cursor: pointer;
+}
+
+/* ==========================================
+   DONOR / REQUESTER / VOLUNTEER / ADMIN NAVBAR
+========================================== */
+
+.portal-topbar {
+    height: 84px !important;
+    min-height: 84px !important;
+    padding: 0 32px !important;
+    background: var(--hp-brand-cream);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Portal logo on the left */
+.portal-brand {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-right: auto;
+}
+
+.portal-brand img {
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+}
+
+/* Prevent duplicate logo text */
+.portal-brand > span {
+    display: none !important;
+}
+
+.portal-top-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.portal-layout {
+    min-height: calc(100vh - 84px) !important;
+}
+
+/* ==========================================
+   RESPONSIVE NAVBAR
+========================================== */
+
+@media (max-width: 850px) {
+
+    .hp-navbar .hp-nav-container {
+        min-height: 76px;
+        padding: 4px 16px;
+    }
+
+    .hp-navbar .hp-logo img {
+        width: 68px;
+        height: 68px;
+    }
+
+    .hp-navbar .hp-menu-btn {
+        display: flex;
+    }
+
+    .hp-navbar .hp-nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        padding: 12px 16px 18px;
+        background: var(--hp-brand-cream);
+        border-bottom: 1px solid #e8e5dc;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        margin: 0;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.06);
+    }
+
+    .hp-navbar .hp-nav-links.show {
+        display: flex;
+    }
+
+    .hp-navbar .hp-nav-links a {
+        padding: 12px;
+        text-align: center;
+    }
+
+    .hp-navbar .hp-nav-links .hp-nav-btn {
+        text-align: center;
+    }
+
+    .portal-topbar {
+        height: 76px !important;
+        min-height: 76px !important;
+        padding: 0 16px !important;
+    }
+
+    .portal-brand img {
+        width: 68px;
+        height: 68px;
+    }
+
+    .portal-layout {
+        min-height: calc(100vh - 76px) !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hp-navbar .hp-nav-container {
+        padding: 4px 12px;
+    }
+
+    .hp-navbar .hp-logo img,
+    .portal-brand img {
+        width: 62px;
+        height: 62px;
+    }
+
+    .portal-topbar {
+        padding: 0 12px !important;
+    }
+
+    .portal-top-actions {
+        gap: 12px;
+    }
+}
+
+/* ===== IMPROVED HELPINGPLATE NAVBAR ===== */
+
+.hp-navbar {
+    min-height: 90px;
+    background: #FAF6EE;
+    border-bottom: 2px solid #E8E1D5;
+}
+
+.hp-navbar .hp-nav-container {
+    min-height: 90px;
+    width: 100%;
+    max-width: 100%;
+    padding: 5px 35px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Logo on the left */
+.hp-navbar .hp-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: auto;
+}
+
+.hp-navbar .hp-logo img {
+    width: 82px;
+    height: 82px;
+    object-fit: contain;
+}
+
+/* Hide duplicate text because logo image already includes it */
+.hp-navbar .hp-logo-text {
+    display: none !important;
+}
+
+/* Navigation links */
+.hp-navbar .hp-nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 32px;
+    margin-left: auto;
+}
+
+.hp-navbar .hp-nav-links a {
+    color: #2C4A3E;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 12px 2px;
+    transition: all 0.25s ease;
+}
+
+.hp-navbar .hp-nav-links a:hover,
+.hp-navbar .hp-nav-links a.active {
+    color: #F39C24;
+}
+
+/* Login button */
+.hp-navbar .hp-nav-links .hp-nav-btn {
+    background: #2C4A3E;
+    color: #FFFFFF;
+    padding: 13px 27px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 0 3px 8px rgba(44, 74, 62, 0.15);
+}
+
+.hp-navbar .hp-nav-links .hp-nav-btn:hover {
+    background: #F39C24;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+/* Mobile menu button */
+.hp-navbar .hp-menu-btn {
+    font-size: 25px;
+}
+
+/* ===== RESPONSIVE NAVBAR ===== */
+@media (max-width: 850px) {
+    .hp-navbar .hp-nav-container {
+        min-height: 76px;
+        padding: 5px 18px;
+    }
+
+    .hp-navbar .hp-logo img {
+        width: 68px;
+        height: 68px;
+    }
+
+    .hp-navbar .hp-menu-btn {
+        display: flex;
+    }
+
+    .hp-navbar .hp-nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        padding: 18px 22px;
+        background: #FAF6EE;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.10);
+        z-index: 1000;
+    }
+
+    .hp-navbar .hp-nav-links.show {
+        display: flex;
+    }
+
+    .hp-navbar .hp-nav-links a {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .hp-navbar .hp-nav-links .hp-nav-btn {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hp-navbar .hp-nav-container {
+        padding: 5px 12px;
+    }
+
+    .hp-navbar .hp-logo img {
+        width: 62px;
+        height: 62px;
+    }
+}
+/* HelpingPlate brand name beside logo */
+
+.hp-navbar .hp-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.hp-navbar .hp-logo img {
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+}
+
+/* Brand name */
+.hp-navbar .hp-logo-text {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    white-space: nowrap;
+}
+
+.hp-navbar .hp-logo-text > span {
+    display: inline;
+    color: #245c45;
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 1.1;
+    font-family: Arial, sans-serif;
+}
+
+.hp-navbar .hp-logo-text > span > span {
+    color: #F39C24;
+}
+
+/* Tagline */
+.hp-navbar .hp-logo-text small {
+    display: block !important;
+    color: #68747B;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    line-height: 1.3;
+}
+
+/* HelpingPlate brand typography */
+
+.hp-navbar .hp-logo-text {
+    display: flex !important;
+    flex-direction: column;
+    gap: 2px;
+    white-space: nowrap;
+    font-family: 'Nunito', sans-serif;
+}
+
+.hp-navbar .hp-logo-text > span {
+    display: inline;
+    font-family: 'Nunito', sans-serif;
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: -0.8px;
+    line-height: 1.1;
+    color: #2C4A3E;
+}
+
+.hp-navbar .hp-logo-text > span > span {
+    color: #F39C24;
+}
+
+.hp-navbar .hp-logo-text small {
+    display: block !important;
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+    color: #68747B;
+    line-height: 1.4;
+}
+
+/* Brand name in one horizontal line */
+
+.hp-navbar .hp-logo-text {
+    display: flex !important;
+    flex-direction: column;
+    gap: 3px;
+    white-space: nowrap;
+}
+
+.hp-navbar .hp-logo-text > span {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 29px;
+    font-weight: 900;
+    letter-spacing: -0.8px;
+    line-height: 0.1;
+    color: #2C4A3E;
+}
+
+.hp-navbar .hp-logo-text > span > span {
+    display: inline !important;
+    color: #F39C24;
+}
+
+.hp-navbar .hp-logo-text small {
+    display: block !important;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #68747B;
+}
+.hp-navbar .hp-logo-text {
+    gap: 0px !important;
+    line-height: 1 !important;
+}
+
+.hp-navbar .hp-logo-text > span {
+    margin-bottom: 0 !important;
+    line-height: 1.05 !important;
+}
+
+.hp-navbar .hp-logo-text small {
+    margin-top: 0 !important;
+    line-height: 1.1 !important;
+}

@@ -1,0 +1,21 @@
+FIXES INCLUDED
+
+1. Mobile navigation
+   - All public pages share hpNavLinks + menuBtn and required ARIA state.
+   - JS supports toggling, closing on navigation, Escape, outside click and desktop resize.
+   - Homepage uses the shared listener only (no duplicate inline handler).
+
+2. Admin Settings
+   - Settings page now has a real editable form that persists support email, phone, contact address, default city and registration toggle.
+   - Values persist in MySQL app_settings; Contact page uses saved support details.
+   - Registration page obeys the registration_enabled flag.
+   - Settings entry remains present in admin sidebar.
+
+3. Forgot Password
+   - Login points to forgot-password.php.
+   - Reset token is cryptographically random, stored as SHA-256 hash, expires in 60 minutes and is single use.
+   - Reset form updates users.password_hash with password_hash(), invalidates other reset tokens, then returns to login.
+   - Generic request response avoids revealing whether an email has an account.
+   - PHP mail()/SMTP must be configured to deliver messages; no token is exposed in the browser.
+
+Validation performed after creation is listed in the delivery notes from the assistant; database transactions still require the user's local XAMPP instance for end-to-end testing.

@@ -1,0 +1,21 @@
+HelpingPlate - Three Feature Fixes
+
+Install into the EXISTING project folder:
+C:\xampp\htdocs\Helpingplate\HelpingPlate_Complete_Project
+
+1. Extract this ZIP into Downloads.
+2. Copy the contents of the extracted HelpingPlate_Feature_Fixes_Patch folder.
+3. Paste into the existing HelpingPlate_Complete_Project folder and choose Replace files.
+4. Do NOT delete the project folder and do NOT drop/re-import your existing database.
+5. Start/keep Apache and MySQL running, then press Ctrl+F5 in Chrome.
+
+Fixes:
+- Consistent accessible mobile menu markup/behavior on public pages.
+- Real Admin Settings form: support email/phone/address/default city, and registration enable/disable. Stored in app_settings.
+- Secure forgot/reset password flow using expiring, single-use, hashed tokens emailed through PHP mail().
+
+Password reset email note:
+The reset screens work, but actual delivery requires outgoing email/SMTP to be configured for PHP mail() in XAMPP/hosting. See README.md. Until SMTP is configured, the app intentionally does not show reset tokens on-screen.
+
+Database:
+The app_settings and password_resets tables are created automatically on first use. Both are also included in database/helpingplate.sql for new installs. No re-import is needed for your existing project database.
